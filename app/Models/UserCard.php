@@ -15,5 +15,17 @@ class UserCard extends Pivot
     protected $primaryKey = 'id';
     public $incrementing = false;
     protected $keyType = 'string';
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'id_user');
+    }
+    
+    // UserCard belongs to a Card
+    public function card()
+    {
+        return $this->belongsTo(Card::class, 'id_card');
+    }
+
 }
 

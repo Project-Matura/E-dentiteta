@@ -11,7 +11,7 @@ class OrganisationUser extends Pivot
     use HasFactory;
     use HasUuids;
 
-    protected $table = 'organisation_users';
+    protected $table = 'organisaton_users';
     protected $primaryKey = 'id';
     public $incrementing = false;
     protected $keyType = 'string';

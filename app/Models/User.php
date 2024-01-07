@@ -59,14 +59,21 @@ class User extends Model implements Authenticatable
     ];
 
     // Relationships
+    public function userCards()
+    {
+        return $this->hasMany(UserCard::class, 'id_user');
+    }
+    
+
+    public function requestCards()
+    {
+        return $this->hasMany(RequestCard::class, 'id_user');
+    }
+    
+
     public function organisations()
     {
         return $this->belongsToMany(Organisation::class, 'organisation_users', 'id_user', 'id_organisation');
-    }
-
-    public function cards()
-    {
-        return $this->belongsToMany(Card::class, 'user_cards', 'id_user', 'id_card');
     }
 }
 

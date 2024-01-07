@@ -25,12 +25,20 @@ class Card extends Model
     // Relationships
     public function organisation()
     {
-        return $this->belongsTo(Organisation::class, 'id');
+        return $this->belongsTo(Organisation::class, 'id_organisation');
+    }
+    
+    // Card has many UserCards
+    public function userCards()
+    {
+        return $this->hasMany(UserCard::class, 'id_card');
+    }
+    
+    // Card has many RequestCards
+    public function requestCards()
+    {
+        return $this->hasMany(RequestCard::class, 'id_card');
     }
 
-    public function users()
-    {
-        return $this->belongsToMany(User::class, 'user_cards', 'id_user', 'id_card');
-    }
 }
 

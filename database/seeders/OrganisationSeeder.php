@@ -23,7 +23,7 @@ class OrganisationSeeder extends Seeder
             'checkking_all_cards' => 'Y',
             'created_at' => \Carbon\Carbon::now(),
             'updated_at' => \Carbon\Carbon::now(),
-            'id_user' => 'c95235f0-3000-42ee-b937-8033708924a1',
+            'id_user' => 'd6cfc288-fe9c-4131-a27e-c06c96cf899c',
         ]);
         DB::table('organisations')->insert([
             'id' => Str::uuid(),
@@ -32,7 +32,7 @@ class OrganisationSeeder extends Seeder
             'checkking_all_cards' => 'N',
             'created_at' => \Carbon\Carbon::now(),
             'updated_at' => \Carbon\Carbon::now(),
-            'id_user' => 'c95235f0-3000-42ee-b937-8033708924a1',
+            'id_user' => 'd6cfc288-fe9c-4131-a27e-c06c96cf899c',
         ]);
         DB::table('organisations')->insert([
             'id' => Str::uuid(),
@@ -41,7 +41,7 @@ class OrganisationSeeder extends Seeder
             'checkking_all_cards' => 'N',
             'created_at' => \Carbon\Carbon::now(),
             'updated_at' => \Carbon\Carbon::now(),
-            'id_user' => 'c95235f0-3000-42ee-b937-8033708924a1',
+            'id_user' => 'd6cfc288-fe9c-4131-a27e-c06c96cf899c',
         ]);
         Organisation::factory()->count(7)->create();
     }

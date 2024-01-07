@@ -24,18 +24,21 @@ class Organisation extends Model
     ];
 
     // Relationships
-    public function users()
-    {
-        return $this->belongsToMany(User::class, 'organisation_users', 'id_organisation', 'id_user');
-    }
-
     public function cards()
     {
         return $this->hasMany(Card::class, 'id_organisation');
     }
-
-    public function admin(){
-        return $this->hasOne(User::class, 'id_user','id' );
+    
+    // Organisation belongs to many Users
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'organisation_users', 'id_organisation', 'id_user');
+    }
+    
+    // Organisation has many RequestCards
+    public function requestCards()
+    {
+        return $this->hasMany(RequestCard::class, 'id_organisation');
     }
 }
 
